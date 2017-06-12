@@ -100,7 +100,7 @@ const passd = function passd( callback, procedure ){
 
 	if( falzy( callback ) ||
 		!protype( callback, FUNCTION ) ||
-		!mrkd( CALLED_ONCE, callback ) )
+		!mrkd( CALLED_ONCE, callback, true ) )
 	{
 		throw new Error( "invalid callback" );
 	}
