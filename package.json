@@ -1,0 +1,53 @@
+{
+  "name": "passd",
+  "version": "0.0.0",
+  "description": "Augment callback.",
+  "main": "passd.js",
+  "support": "passd.support.js",
+  "deploy": "passd.deploy.js",
+  "browser": "passd.deploy.js",
+  "scripts": {
+    "build": "babel passd.js --out-file passd.support.js --source-maps && webpack --progress --display-modules",
+    "test": "mocha passd-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volkovasystems/passd.git"
+  },
+  "keywords": [
+    "augment",
+    "callback",
+    "passd"
+  ],
+  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/volkovasystems/passd/issues"
+  },
+  "homepage": "https://github.com/volkovasystems/passd#readme",
+  "dependencies": {
+    "aply": "^0.6.0",
+    "arid": "^0.26.0",
+    "babel-runtime": "^6.23.0",
+    "burne": "^0.2.0",
+    "execd": "^0.2.0",
+    "falzy": "^0.20.0",
+    "impel": "^0.15.0",
+    "kein": "^0.26.0",
+    "mrkd": "^0.6.0",
+    "plough": "^0.26.0",
+    "protype": "^0.22.0",
+    "pyck": "^0.33.0",
+    "raze": "^0.30.0",
+    "shft": "^0.2.0",
+    "zelf": "^0.12.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-latest": "^6.24.1",
+    "source-map-loader": "^0.2.1",
+    "webpack": "^2.6.1"
+  }
+}

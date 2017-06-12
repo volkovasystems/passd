@@ -1,2 +1,2 @@
 # passd
-Augment callbacks.
+Augment callback.
