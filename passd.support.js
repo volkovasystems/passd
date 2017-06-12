@@ -152,6 +152,8 @@ var passd = function passd(callback, procedure) {
 
 		} finally {
 			delete callback[PROCEDURE];
+
+			callback = undefined;
 		}
 
 	}, callback);
