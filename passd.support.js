@@ -55,11 +55,13 @@
                                                                                                                                                                                                                 			"impel": "impel",
                                                                                                                                                                                                                 			"kein": "kein",
                                                                                                                                                                                                                 			"mrkd": "mrkd",
+                                                                                                                                                                                                                			"parlev": "parlev",
                                                                                                                                                                                                                 			"plough": "plough",
                                                                                                                                                                                                                 			"protype": "protype",
                                                                                                                                                                                                                 			"pyck": "pyck",
                                                                                                                                                                                                                 			"raze": "raze",
                                                                                                                                                                                                                 			"shft": "shft",
+                                                                                                                                                                                                                			"wichis": "wichis",
                                                                                                                                                                                                                 			"zelf": "zelf"
                                                                                                                                                                                                                 		}
                                                                                                                                                                                                                 	@end-include
@@ -73,30 +75,33 @@ var falzy = require("falzy");
 var impel = require("impel");
 var kein = require("kein");
 var mrkd = require("mrkd");
+var parlev = require("parlev");
 var plough = require("plough");
 var protype = require("protype");
 var pyck = require("pyck");
 var raze = require("raze");
 var shft = require("shft");
+var wichis = require("wichis");
 var zelf = require("zelf");
 
 var CALLED_ONCE = (0, _symbol2.default)("called-once");
 var PASSABLE = (0, _symbol2.default)("passable");
 var PROCEDURE = (0, _symbol2.default)("procedure");
 
-var passd = function passd(callback, procedure) {
+var passd = function passd(callback, procedure, parameter) {
 	/*;
-                                                 	@meta-configuration:
-                                                 		{
-                                                 			"callback:required": "function",
-                                                 			"procedure": [
-                                                 				"function",
-                                                 				"[function]"
-                                                 				"..."
-                                                 			]
-                                                 		}
-                                                 	@end-meta-configuration
-                                                 */
+                                                            	@meta-configuration:
+                                                            		{
+                                                            			"callback:required": "function",
+                                                            			"procedure": [
+                                                            				"function",
+                                                            				"[function]"
+                                                            				"..."
+                                                            			],
+                                                            			"parameter": Array
+                                                            		}
+                                                            	@end-meta-configuration
+                                                            */
 
 	if (falzy(callback) ||
 	!protype(callback, FUNCTION) ||
@@ -123,26 +128,28 @@ var passd = function passd(callback, procedure) {
 		return callback;
 	}
 
+	parameter = parlev(shft(arguments, 2));
+
 	callback[PROCEDURE] = procedure;
 
 	var self = zelf(this);
 
-	impel("passed", function passed(parameter) {
+	impel("passed", function passed(argument) {
 		/*;
-                                             	@meta-configuration:
-                                             		{
-                                             			"parameter": "..."
-                                             		}
-                                             	@end-meta-configuration
-                                             */
+                                            	@meta-configuration:
+                                            		{
+                                            			"parameter": "..."
+                                            		}
+                                            	@end-meta-configuration
+                                            */
 
-		parameter = raze(arguments);
+		argument = wichis(raze(arguments), parameter);
 
 		try {
-			var result = aply(callback, self, parameter);
+			var result = aply(callback, self, argument);
 
 			while (procedure.length) {
-				aply(procedure.pop(), self, parameter);
+				aply(procedure.pop(), self, argument);
 			}
 
 			return result;
@@ -154,6 +161,7 @@ var passd = function passd(callback, procedure) {
 			delete callback[PROCEDURE];
 
 			callback = undefined;
+			parameter = undefined;
 		}
 
 	}, callback);

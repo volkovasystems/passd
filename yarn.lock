@@ -1449,6 +1449,14 @@ filled@^0.21.0:
     babel-runtime "^6.23.0"
     doubt "^0.26.0"
 
+filled@^0.22.0:
+  version "0.22.0"
+  resolved "https://registry.yarnpkg.com/filled/-/filled-0.22.0.tgz#32df89e97ecf5b1544d2794832115936339f40ae"
+  dependencies:
+    arkount "^0.8.0"
+    babel-runtime "^6.23.0"
+    doubt "^0.27.0"
+
 find-up@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/find-up/-/find-up-1.1.2.tgz#6b2e9822b1a2ce0a60ab64d610eccad53cb24d0f"
@@ -2339,6 +2347,18 @@ parlev@^0.0.0:
     firs "^0.0.0"
     raze "^0.30.0"
 
+parlev@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/parlev/-/parlev-0.1.0.tgz#ae55cf218c800b5d46db868eb427bcd9010b9a87"
+  dependencies:
+    arid "^0.26.0"
+    arkount "^0.8.0"
+    babel-runtime "^6.23.0"
+    doubt "^0.27.0"
+    falzy "^0.20.0"
+    firs "^0.0.0"
+    raze "^0.30.0"
+
 parse-asn1@^5.0.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/parse-asn1/-/parse-asn1-5.1.0.tgz#37c4f9b7ed3ab65c74817b5f2480937fbf97c712"
@@ -2925,6 +2945,16 @@ stuffed@^0.22.0:
     protype "^0.21.0"
     truly "^0.18.0"
 
+stuffed@^0.23.0:
+  version "0.23.0"
+  resolved "https://registry.yarnpkg.com/stuffed/-/stuffed-0.23.0.tgz#c6a74bb06d9660b209ff1e907e1a128dba78b7bd"
+  dependencies:
+    babel-runtime "^6.23.0"
+    doubt "^0.27.0"
+    kount "^0.11.0"
+    protype "^0.22.0"
+    truly "^0.19.0"
+
 supports-color@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
@@ -3006,6 +3036,17 @@ truu@^0.25.0:
     protype "^0.21.0"
     stuffed "^0.22.0"
     truly "^0.18.0"
+
+truu@^0.26.0:
+  version "0.26.0"
+  resolved "https://registry.yarnpkg.com/truu/-/truu-0.26.0.tgz#c5ff3f5b93ca711cc4c931ead40bb22b4404edc9"
+  dependencies:
+    babel-runtime "^6.23.0"
+    doubt "^0.27.0"
+    filled "^0.22.0"
+    protype "^0.22.0"
+    stuffed "^0.23.0"
+    truly "^0.19.0"
 
 tty-browserify@0.0.0:
   version "0.0.0"
@@ -3176,6 +3217,14 @@ wichis@^0.13.0:
     babel-runtime "^6.23.0"
     raze "^0.29.0"
     truu "^0.25.0"
+
+wichis@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/wichis/-/wichis-0.14.0.tgz#715a543e6bae6336a4bd53da25e139962cadfac9"
+  dependencies:
+    babel-runtime "^6.23.0"
+    raze "^0.30.0"
+    truu "^0.26.0"
 
 wide-align@^1.1.0:
   version "1.1.2"

@@ -8,11 +8,13 @@ falzy \
 impel \
 kein \
 mrkd \
+parlev \
 plough \
 protype \
 pyck \
 raze \
 shft \
+wichis \
 zelf \
 --save && \
 yarn add \
@@ -32,11 +34,13 @@ falzy \
 impel \
 kein \
 mrkd \
+parlev \
 plough \
 protype \
 pyck \
 raze \
 shft \
+wichis \
 zelf \
 --save \
 --force-latest

@@ -1,6 +1,6 @@
 {
   "name": "passd",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Augment callback.",
   "main": "passd.js",
   "support": "passd.support.js",
@@ -35,11 +35,13 @@
     "impel": "^0.15.0",
     "kein": "^0.26.0",
     "mrkd": "^0.6.0",
+    "parlev": "^0.1.0",
     "plough": "^0.26.0",
     "protype": "^0.22.0",
     "pyck": "^0.34.0",
     "raze": "^0.30.0",
     "shft": "^0.2.0",
+    "wichis": "^0.14.0",
     "zelf": "^0.12.0"
   },
   "devDependencies": {

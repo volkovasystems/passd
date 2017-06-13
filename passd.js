@@ -55,11 +55,13 @@
 			"impel": "impel",
 			"kein": "kein",
 			"mrkd": "mrkd",
+			"parlev": "parlev",
 			"plough": "plough",
 			"protype": "protype",
 			"pyck": "pyck",
 			"raze": "raze",
 			"shft": "shft",
+			"wichis": "wichis",
 			"zelf": "zelf"
 		}
 	@end-include
@@ -73,18 +75,20 @@ const falzy = require( "falzy" );
 const impel = require( "impel" );
 const kein = require( "kein" );
 const mrkd = require( "mrkd" );
+const parlev = require( "parlev" );
 const plough = require( "plough" );
 const protype = require( "protype" );
 const pyck = require( "pyck" );
 const raze = require( "raze" );
 const shft = require( "shft" );
+const wichis = require( "wichis" );
 const zelf = require( "zelf" );
 
 const CALLED_ONCE = Symbol( "called-once" );
 const PASSABLE = Symbol( "passable" );
 const PROCEDURE = Symbol( "procedure" );
 
-const passd = function passd( callback, procedure ){
+const passd = function passd( callback, procedure, parameter ){
 	/*;
 		@meta-configuration:
 			{
@@ -93,7 +97,8 @@ const passd = function passd( callback, procedure ){
 					"function",
 					"[function]"
 					"..."
-				]
+				],
+				"parameter": Array
 			}
 		@end-meta-configuration
 	*/
@@ -123,11 +128,13 @@ const passd = function passd( callback, procedure ){
 		return callback;
 	}
 
+	parameter = parlev( shft( arguments, 2 ) );
+
 	callback[ PROCEDURE ] = procedure;
 
 	let self = zelf( this );
 
-	impel( "passed", function passed( parameter ){
+	impel( "passed", function passed( argument ){
 		/*;
 			@meta-configuration:
 				{
@@ -136,13 +143,13 @@ const passd = function passd( callback, procedure ){
 			@end-meta-configuration
 		*/
 
-		parameter = raze( arguments );
+	 	argument = wichis( raze( arguments ), parameter );
 
 		try{
-			let result = aply( callback, self, parameter );
+			let result = aply( callback, self, argument );
 
 			while( procedure.length ){
-				aply( procedure.pop( ), self, parameter );
+				aply( procedure.pop( ), self, argument );
 			}
 
 			return result;
@@ -152,8 +159,9 @@ const passd = function passd( callback, procedure ){
 
 		}finally{
 			delete callback[ PROCEDURE ];
-			
+
 			callback = undefined;
+			parameter = undefined;
 		}
 
 	}, callback );
