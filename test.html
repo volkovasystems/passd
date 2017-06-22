@@ -1,8 +1,40 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<script
-			type="application/javascript"
-			src="./passd.deploy.js">
-		</script>
+		<title>passd unit test</title>
+
+		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+
+		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
+
+		<script type="application/javascript" src="./passd.deploy.js"></script>
 	</head>
+
+	<body>
+		<div id="qunit"></div>
+
+		<div id="qunit-fixture"></div>
+
+		<script type="application/javascript">
+			QUnit.test( "passd unit test", function( assert ) {
+
+				let CALLED_ONCE = Symbol( "called-once" );
+				let callback = function callback( ){
+					assert.deepEqual( Array.from( arguments ), [ "hello", "world", "yeah" ], "should be deeply equal" );
+				};
+				callback[ CALLED_ONCE ] = CALLED_ONCE;
+
+				passd( callback, function test( ){
+					assert.deepEqual( Array.from( arguments ), [ "hello", "world", "yeah" ], "should be deeply equal" );
+
+					console.log( "ok" );
+				} );
+
+				assert.equal( typeof callback.passed == "function", true, "should have passed function" );
+
+				callback.passed( "hello", "world", "yeah" );
+				
+			} );
+		</script>
+	</body>
 </html>
