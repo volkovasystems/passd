@@ -61,7 +61,6 @@
                                                                                                                                                                                                                 			"mrkd": "mrkd",
                                                                                                                                                                                                                 			"parlev": "parlev",
                                                                                                                                                                                                                 			"plough": "plough",
-                                                                                                                                                                                                                			"protype": "protype",
                                                                                                                                                                                                                 			"pyck": "pyck",
                                                                                                                                                                                                                 			"raze": "raze",
                                                                                                                                                                                                                 			"shft": "shft",
@@ -81,7 +80,6 @@ var kein = require("kein");
 var mrkd = require("mrkd");
 var parlev = require("parlev");
 var plough = require("plough");
-var protype = require("protype");
 var pyck = require("pyck");
 var raze = require("raze");
 var shft = require("shft");
@@ -108,7 +106,7 @@ var passd = function passd(callback, procedure, parameter) {
                                                             */
 
 	if (falzy(callback) ||
-	!protype(callback, FUNCTION) ||
+	typeof callback != "function" ||
 	!mrkd(CALLED_ONCE, callback, true))
 	{
 		throw new Error("invalid callback");
