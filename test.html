@@ -1,40 +1,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>passd unit test</title>
+		<meta charset="utf-8">
 
-		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+		<title>test:passd</title>
 
-		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
-
-		<script type="application/javascript" src="./passd.deploy.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css"/>
 	</head>
 
 	<body>
-		<div id="qunit"></div>
+		<div id="mocha"></div>
 
-		<div id="qunit-fixture"></div>
+		<script type="application/javascript" src="https://unpkg.com/mocha/mocha.js"></script>
 
 		<script type="application/javascript">
-			QUnit.test( "passd unit test", function( assert ) {
+			mocha.setup( "bdd" );
+		</script>
 
-				let CALLED_ONCE = Symbol( "called-once" );
-				let callback = function callback( ){
-					assert.deepEqual( Array.from( arguments ), [ "hello", "world", "yeah" ], "should be deeply equal" );
-				};
-				callback[ CALLED_ONCE ] = CALLED_ONCE;
+		<script type="application/javascript" src="./test.deploy.js"></script>
 
-				passd( callback, function test( ){
-					assert.deepEqual( Array.from( arguments ), [ "hello", "world", "yeah" ], "should be deeply equal" );
-
-					console.log( "ok" );
-				} );
-
-				assert.equal( typeof callback.passed == "function", true, "should have passed function" );
-
-				callback.passed( "hello", "world", "yeah" );
-				
-			} );
+		<script type="application/javascript">
+			mocha.run( );
 		</script>
 	</body>
 </html>

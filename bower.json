@@ -1,44 +1,26 @@
 {
-  "name": "passd",
-  "version": "0.6.0",
-  "description": "Augment callback.",
-  "main": "passd.deploy.js",
-  "support": "passd.support.js",
-  "authors": [
-    "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-    "Vinse Vinalon <vinsevinalon@gmail.com>"
-  ],
-  "license": "MIT",
-  "keywords": [
-    "augment",
-    "callback",
-    "passd"
-  ],
-  "homepage": "https://github.com/volkovasystems/passd",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "aply": "^0.8.0",
-    "arid": "^0.26.0",
-    "burne": "^0.4.0",
-    "execd": "^0.4.0",
-    "falzy": "^0.20.0",
-    "impel": "^0.15.0",
-    "kein": "^0.26.0",
-    "mrkd": "^0.8.0",
-    "parlev": "^0.2.0",
-    "plough": "^0.26.0",
-    "protype": "^0.22.0",
-    "pyck": "^0.35.0",
-    "raze": "^0.30.0",
-    "shft": "^0.2.0",
-    "wichis": "^0.14.0",
-    "zelf": "^0.12.0"
-  }
+	"name": "passd",
+	"version": "0.6.0",
+	"description": "Augment callback.",
+	"main": "passd.deploy.js",
+	"support": "passd.support.js",
+	"authors": [
+		"Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+		"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+		"Vinse Vinalon <vinsevinalon@gmail.com>"
+	],
+	"license": "MIT",
+	"keywords": [
+		"augment",
+		"callback",
+		"passd"
+	],
+	"homepage": "https://github.com/volkovasystems/passd",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	]
 }
