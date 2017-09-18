@@ -45,13 +45,13 @@
 
 	@include:
 		{
-			"assert": "should",
+			"assert": "should/as-function",
 			"passd": "passd"
 		}
 	@end-include
 */
 
-const assert = require( "should" );
+const assert = require( "should/as-function" );
 
 //: @server:
 const passd = require( "./passd.js" );
@@ -63,11 +63,29 @@ const passd = require( "./passd.js" );
 
 
 //: @server:
-
 describe( "passd", ( ) => {
 
-} );
+	describe( "`passd with callback and procedure`", ( ) => {
+		it( "should augment callback", ( ) => {
+			let CALLED_ONCE = Symbol( "called-once" );
+			let callback = function callback( ){
+				assert.deepEqual( Array.from( arguments ), [ "hello", "world", "yeah" ] );
+			};
 
+			callback[ CALLED_ONCE ] = CALLED_ONCE;
+
+			passd( callback, function test( ){
+				assert.deepEqual( Array.from( arguments ), [ "hello", "world", "yeah" ] );
+			} );
+
+			assert.equal( typeof callback.passed == "function", true );
+
+			callback.passed( "hello", "world", "yeah" );
+			
+		} );
+	} );
+
+} );
 //: @end-server
 
 
