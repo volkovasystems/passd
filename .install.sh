@@ -10,7 +10,6 @@ kein \
 mrkd \
 parlev \
 plough \
-protype \
 pyck \
 raze \
 shft \
@@ -52,7 +51,6 @@ kein \
 mrkd \
 parlev \
 plough \
-protype \
 pyck \
 raze \
 shft \

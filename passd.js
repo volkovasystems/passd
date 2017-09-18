@@ -61,7 +61,6 @@
 			"mrkd": "mrkd",
 			"parlev": "parlev",
 			"plough": "plough",
-			"protype": "protype",
 			"pyck": "pyck",
 			"raze": "raze",
 			"shft": "shft",
@@ -81,7 +80,6 @@ const kein = require( "kein" );
 const mrkd = require( "mrkd" );
 const parlev = require( "parlev" );
 const plough = require( "plough" );
-const protype = require( "protype" );
 const pyck = require( "pyck" );
 const raze = require( "raze" );
 const shft = require( "shft" );
@@ -108,7 +106,7 @@ const passd = function passd( callback, procedure, parameter ){
 	*/
 
 	if( falzy( callback ) ||
-		!protype( callback, FUNCTION ) ||
+		typeof callback != "function" ||
 		!mrkd( CALLED_ONCE, callback, true ) )
 	{
 		throw new Error( "invalid callback" );
